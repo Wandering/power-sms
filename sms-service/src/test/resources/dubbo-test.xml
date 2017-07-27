@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 提供方应用信息，用于计算依赖关系 -->
+    <dubbo:application name="power-user"  />
+    <!-- 注册中心暴露服务地址 -->
+    <dubbo:registry address="zookeeper://mc.zk.power.com:2181" file="/tmp/dubbo.cache"/>
+
+    <dubbo:protocol port="-1"/>
+
+    <!-- 配置服务 -->
+    <dubbo:reference id="smsService" interface="com.power.yuneng.sms.api.ISMSService" check="false"
+                     timeout="60000"/>
+
+</beans>
+       
