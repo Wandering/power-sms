@@ -32,9 +32,9 @@ public class SMSStarter {
     private SimpleClientHttpRequestFactory httpRequestFactory = new SimpleClientHttpRequestFactory();
     @Bean
     public RestTemplate restTemplate() {
-        SocketAddress address = new InetSocketAddress("127.0.0.1", 48888);
-        Proxy proxy = new Proxy(Proxy.Type.HTTP, address);
-        httpRequestFactory.setProxy(proxy);
+//        SocketAddress address = new InetSocketAddress("127.0.0.1", 48888);
+//        Proxy proxy = new Proxy(Proxy.Type.HTTP, address);
+//        httpRequestFactory.setProxy(proxy);
         RestTemplate restTemplate = builder.requestFactory(httpRequestFactory).build();
         return restTemplate;
     }
