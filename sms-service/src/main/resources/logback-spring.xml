@@ -21,11 +21,9 @@
         <appender-ref ref="FILE"/>
     </appender>
 -->
-    <root level="DEBUG">
-        <!--<appender-ref ref="FILE" />-->
-    </root>
+
     <!--文件路径-->
-    <property name="FILE_PATH" value="./logs/power-user.log" />
+    <property name="FILE_PATH" value="./logs/power-sms.log" />
     <!-- 生产环境 -->
     <springProfile name="prod">
         <!-- 每天产生一个文件 -->
@@ -33,7 +31,7 @@
             <!-- 文件路径 -->
             <file>${FILE_PATH}</file>
             <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-                <fileNamePattern>./logs/logFile.%d{yyyy-MM-dd}.log</fileNamePattern>
+                <fileNamePattern>./logs/power-sms.%d{yyyy-MM-dd}.log</fileNamePattern>
                 <maxHistory>90</maxHistory>
             </rollingPolicy>
             <encoder>
@@ -53,7 +51,7 @@
             <!-- 文件路径 -->
             <file>${FILE_PATH}</file>
             <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-                <fileNamePattern>./logs/logFile.%d{yyyy-MM-dd}.log</fileNamePattern>
+                <fileNamePattern>./logs/power-sms.%d{yyyy-MM-dd}.log</fileNamePattern>
                 <maxHistory>90</maxHistory>
             </rollingPolicy>
             <encoder>
@@ -74,7 +72,7 @@
             <!-- 文件路径 -->
             <file>${FILE_PATH}</file>
             <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-                <fileNamePattern>./logs/logFile.%d{yyyy-MM-dd}.log</fileNamePattern>
+                <fileNamePattern>./logs/power-sms.%d{yyyy-MM-dd}.log</fileNamePattern>
                 <maxHistory>90</maxHistory>
             </rollingPolicy>
             <encoder>

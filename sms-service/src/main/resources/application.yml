@@ -23,3 +23,5 @@ spring:
 mybatis:
   mapperLocations: classpath*:/sql/*.xml
   typeAliasesPackage: com.power.yuneng.sms.domain
+server:
+  port: 8089
