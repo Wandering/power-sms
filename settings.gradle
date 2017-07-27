@@ -1,0 +1,5 @@
+rootProject.name = 'sms'
+include 'sms-service'
+include 'sms-api'
+include 'sms-domain'
+

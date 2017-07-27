@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.power.yuneng.sms.dao.SMSDao">
+
+    <!-- 保存短信信息 -->
+    <insert id="saveCheckCode" parameterType="SMSStatus" useGeneratedKeys="true" keyColumn="sms_id" keyProperty="id">
+        INSERT INTO sms_checkcode (
+            sms_bizTarget,
+            sms_checkCode,
+            sms_phone,
+            sms_sendResult,
+            sms_ResultCode
+        )values (
+            #{bizTarget},
+            #{sendContent},
+            #{toSendPhone},
+            #{sendResult},
+            #{resultCode}
+        )
+    </insert>
+
+    <!-- 保存发送状态 -->
+    <insert id="saveSMSStatus" parameterType="SMSStatus">
+        INSERT INTO sms_send_status (
+            sms_id,
+            sms_type,
+            send_channel,
+            callSid
+        ) VALUES (
+            #{id},
+            #{smsType},
+            #{sendChannel},
+            #{callSid}
+        )
+    </insert>
+
+    <!--查询模板内容-->
+    <select id="queryTemplateById" parameterType="java.lang.Long" resultType="com.power.yuneng.sms.domain.SMSTemplate">
+        SELECT * FROM sms_template WHERE id = #{bizTarget}
+    </select>
+
+</mapper>
